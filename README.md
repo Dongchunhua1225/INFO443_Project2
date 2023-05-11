@@ -1,6 +1,12 @@
 # INFO443_Project2
 INFO443 Project 2
 
+## Members:
+ - Aaron Liu
+ - Haochen Dong
+ - Lucas Zhou
+ - Osbert Lee
+
 ## Introduction to FastChat
 
 #### - What is FastChat?
