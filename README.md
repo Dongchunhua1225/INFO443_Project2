@@ -51,7 +51,7 @@ The FastChat code base also implements an event-driven architecture, which is a 
 
 ### Design Patterns:
 
-#### Factory Method:
+#### Factory Method
 
 - Context: The FastChat code base uses the Factory Method pattern to create instances of the ChatService class.
 - Problem: The ChatService class has several subclasses that need to be created dynamically based on user input.
