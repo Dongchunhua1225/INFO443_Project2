@@ -9,15 +9,15 @@ INFO443 Project 2
 
 ## Introduction to FastChat
 
-#### - What is FastChat?
+### - What is FastChat?
 
 FastChat is a open-source training, serving, and evaluating large language model based chatbots. As an open-source tool, it has released Vicuna, an open-source chatbot that has demonstrated the ability to rival GPT-4 in terms of quality, achieving a 90% ChatGPT rating. This platform offers users the capability to interact with FastChat in natural language and provides various interfaces such as CLI and WebGUI for ease of use. The ultimate aim of FastChat is to simplify the creation and deployment of chatbots, enabling businesses and organizations to enhance their customer interactions through natural language processing.
 
-#### - Who creates FastChat?
+### - Who creates FastChat?
 
 FastChat is a community-driven open-source project, which is not affiliated with any specific commercial entity. The development team behind FastChat is officially known as "Lmsys," and their website can be found at "https://lmsys.org/blog/". Based on our analysis of the GitHub repository, we have identified Ying Sheng, a Ph.D. student at Stanford University's Computer Science Department, as the primary maintainer of the platform. In addition, we have observed that over 16 different developers have contributed to the FastChat platform in the past month.
 
-### Report Overview and Introduction
+## Report Overview and Introduction
 
 In this project, we will be working with FastChat: an open-source platform created to streamline the process of creating and deploying chatbots. This program covers every aspect of building a chatbot. This includes training, servering, and evaluating the chatbots based on large language models. One example of FastChat’s success is with Vicuna: an open-source chatbot that has proven its abilities to rival the quality of GPT-4. This achievement has an impressive 90% ChatGPT rating, thus highlighting the remarkable capabilities of FastChat.
 
@@ -28,54 +28,54 @@ What makes FastChat a stronger competitor compared to other products in the fiel
 By focusing on simplicity and empowering users, FastChat simplifies the creation and deployment of chatbots. FastChat's commitment to open-source principles and its collaborative community ensure that it continues to evolve, improve, and adapt to emerging needs and technological advancements. With FastChat, businesses and organizations can deliver enhanced user experiences and foster meaningful connections.
 
 
-### Development View
+## Development View
 
 ![diagram 1](./image/Diagram1.jpg)
 
 
-### Applied Perspective
+## Applied Perspective
 
 FastChat, as an open-source platform for training, serving, and evaluating large language model-based chatbots, can be analyzed from various perspectives.  Form Scalability Perspective: Given the potentially high demand for language model-based chatbots, understanding how well FastChat can handle growth in terms of data, users, and/or requests is important.
 
-### Identify Styles & Patterns Used
+## Identify Styles & Patterns Used
 
-#### Architectural Style:
+### Architectural Style:
 
-##### Microservices
+#### Microservices
 
 The FastChat code base implements a microservices architecture, which is a style of software architecture that structures an application as a collection of loosely coupled services. Each service is self-contained and can be developed, deployed, and scaled independently of the other services in the system. In the FastChat code base, the ChatService class is the main microservice that handles all communication between clients. The ChatService class is designed to be self-contained and can be deployed and scaled independently of other services in the system.
 
-##### Event-Driven Architecture
+#### Event-Driven Architecture
 
 The FastChat code base also implements an event-driven architecture, which is a style of software architecture that emphasizes the production, detection, consumption, and reaction to events. In the FastChat code base, the ChatService class produces events when a new message is received, and clients consume those events to update their UI. The Observer pattern is used to implement the event-driven architecture, with clients registering themselves as observers of the ChatService class to receive notifications when a new message is received.                                                                                                        
 
-#### Design Patterns:
+### Design Patterns:
 
-##### Factory Method:
+#### Factory Method:
 
-Context: The FastChat code base uses the Factory Method pattern to create instances of the ChatService class.
-Problem: The ChatService class has several subclasses that need to be created dynamically based on user input.
-Solution: The Factory Method pattern allows the ChatService class to delegate the creation of its subclasses to a separate factory class, which can create the appropriate subclass based on user input.
+- Context: The FastChat code base uses the Factory Method pattern to create instances of the ChatService class.
+- Problem: The ChatService class has several subclasses that need to be created dynamically based on user input.
+- Solution: The Factory Method pattern allows the ChatService class to delegate the creation of its subclasses to a separate factory class, which can create the appropriate subclass based on user input.
 
-##### Singleton
+#### Singleton
 
-Context: The FastChat code base uses the Singleton pattern to ensure that only one instance of the ChatService class is created.
-Problem: The ChatService class should only have one instance to ensure that all clients are communicating with the same service.
-Solution: The Singleton pattern ensures that only one instance of the ChatService class is created and provides a global point of access to that instance.
+- Context: The FastChat code base uses the Singleton pattern to ensure that only one instance of the ChatService class is created.
+- Problem: The ChatService class should only have one instance to ensure that all clients are communicating with the same service.
+- Solution: The Singleton pattern ensures that only one instance of the ChatService class is created and provides a global point of access to that instance.
 
-##### Observer
+#### Observer
 
-Context: The FastChat code base uses the Observer pattern to notify clients when a new message is received.
-Problem: Clients need to be notified when a new message is received so that they can update their UI.
-Solution: The Observer pattern allows clients to register themselves as observers of the ChatService class and receive notifications when a new message is received.
+- Context: The FastChat code base uses the Observer pattern to notify clients when a new message is received.
+- Problem: Clients need to be notified when a new message is received so that they can update their UI.
+- Solution: The Observer pattern allows clients to register themselves as observers of the ChatService class and receive notifications when a new message is received.
 
-##### Decorator
+#### Decorator
 
-Context: The FastChat code base uses the Decorator pattern to add functionality to the ChatService class.
-Problem: The ChatService class needs to be able to handle different types of messages.
-Solution: The Decorator pattern allows the ChatService class to dynamically add functionality to handle different types of messages.
+- Context: The FastChat code base uses the Decorator pattern to add functionality to the ChatService class.
+- Problem: The ChatService class needs to be able to handle different types of messages.
+- Solution: The Decorator pattern allows the ChatService class to dynamically add functionality to handle different types of messages.
 
-### Architectural Assessment
+## Architectural Assessment
 
 In the following segment, we will conduct an in-depth architectural assessment of FastChat, viewing it through the lens of design principles. FastChat has established itself as a potent tool in the current market, attributed to its intricate design and well-structured formatting. Our primary focus in this section will be the application of the SOLID principles in its architecture.The SOLID principles encompass the Single Responsibility Principle, the Open-Closed Principle, the Liskov Substitution Principle, the Interface Segregation Principle, and the Dependency Inversion Principle. A thorough examination of FastChat's server files, including data, API server, end-to-end evaluation pipelines, models, and training files, reveals that its entire backend system subscribes to these principles.However, notwithstanding its overall adherence to SOLID principles, there are certain nuances that seem to contravene these principles. Herein, we will present several instances identified in the system that showcase such contradictions.
 
