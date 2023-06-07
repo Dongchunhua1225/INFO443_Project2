@@ -43,37 +43,37 @@ FastChat, as an open-source platform for training, serving, and evaluating large
 
 #### Microservices
 
-The FastChat code base implements a microservices architecture, which is a style of software architecture that structures an application as a collection of loosely coupled services. Each service is self-contained and can be developed, deployed, and scaled independently of the other services in the system. In the FastChat code base, the ChatService class is the main microservice that handles all communication between clients. The ChatService class is designed to be self-contained and can be deployed and scaled independently of other services in the system.
+FastChat is structured using a microservices architecture, a software architectural style that organizes an application as a collection of loosely coupled, independently deployable services. In FastChat's context, each service, such as the ChatService class, encapsulates a specific functionality and can be developed, deployed, and scaled independently. This architecture was chosen due to its flexibility in allowing FastChat to expand or modify its functionalities independently, enhancing scalability and reliability. It empowers FastChat to rapidly adapt to changes and innovate, essential for any organization striving to provide an evolving and quality AI chat service.
 
 #### Event-Driven Architecture
 
-The FastChat code base also implements an event-driven architecture, which is a style of software architecture that emphasizes the production, detection, consumption, and reaction to events. In the FastChat code base, the ChatService class produces events when a new message is received, and clients consume those events to update their UI. The Observer pattern is used to implement the event-driven architecture, with clients registering themselves as observers of the ChatService class to receive notifications when a new message is received.                                                                                                        
+Additionally, FastChat leverages an event-driven architecture, a model that focuses on the production, detection, consumption, and reaction to events. In the FastChat environment, events such as receiving a new message, are produced by the ChatService class. Clients then consume these events to update their User Interface (UI). FastChat uses the Observer pattern to implement this architecture, with clients registering themselves as observers of the ChatService class to receive event notifications. This architecture style enhances responsiveness and scalability, as the system reacts in real-time to user interactions, a critical feature for a conversational AI platform like FastChat that must process and respond to user input promptly.                                                                                                       
 
 ### Design Patterns:
 
 #### Factory Method
 
-- Context: The FastChat code base uses the Factory Method pattern to create instances of the ChatService class.
-- Problem: The ChatService class has several subclasses that need to be created dynamically based on user input.
-- Solution: The Factory Method pattern allows the ChatService class to delegate the creation of its subclasses to a separate factory class, which can create the appropriate subclass based on user input.
+- Context: The Factory Method pattern is employed in FastChat to manage the creation of ChatService instances dynamically.
+- Problem: The ChatService class necessitates several dynamically created subclasses based on user input.
+- Solution: The Factory Method pattern delegates the creation of the ChatService subclasses to a separate factory class based on the user's input. This pattern contributes to code robustness and extensibility in the system, by abstracting the instantiation process, thus allowing for the dynamic addition of new subclasses in the future, which aligns with FastChat's goal of continuous improvement and adaptability.
 
 #### Singleton
 
-- Context: The FastChat code base uses the Singleton pattern to ensure that only one instance of the ChatService class is created.
-- Problem: The ChatService class should only have one instance to ensure that all clients are communicating with the same service.
-- Solution: The Singleton pattern ensures that only one instance of the ChatService class is created and provides a global point of access to that instance.
+- Context: FastChat uses the Singleton pattern to manage access to the ChatService class.
+- Problem: A unique instance of the ChatService class is needed to ensure that all clients are communicating via the same service.
+- Solution: The Singleton pattern ensures that only one instance of the ChatService class exists, providing a global point of access to it. This pattern is vital to ensure consistent interactions between the chat service and all clients, promoting effective and synchronized communication.
 
 #### Observer
 
-- Context: The FastChat code base uses the Observer pattern to notify clients when a new message is received.
-- Problem: Clients need to be notified when a new message is received so that they can update their UI.
-- Solution: The Observer pattern allows clients to register themselves as observers of the ChatService class and receive notifications when a new message is received.
+- Context: FastChat employs the Observer pattern to manage notifications to clients upon receipt of a new message.
+- Problem: Client UIs need to be promptly updated when a new message is received.
+- Solution: The Observer pattern allows clients to register themselves as observers of the ChatService class, receiving notifications when a new message arrives. This design pattern is essential for ensuring real-time updates and responsiveness in the system, which is a key attribute for an efficient chatbot system.
 
 #### Decorator
 
-- Context: The FastChat code base uses the Decorator pattern to add functionality to the ChatService class.
-- Problem: The ChatService class needs to be able to handle different types of messages.
-- Solution: The Decorator pattern allows the ChatService class to dynamically add functionality to handle different types of messages.
+- Context: FastChat uses the Decorator pattern to extend the functionality of the ChatService class.
+- Problem: The ChatService class needs to dynamically handle various types of messages.
+- Solution: The Decorator pattern enables the ChatService class to dynamically add new functionalities to handle different message types. It allows the chat service to be flexible and adaptable, enhancing its ability to process various kinds of user input, a crucial feature for any versatile chatbot system.
 
 ## Architectural Assessment
 
