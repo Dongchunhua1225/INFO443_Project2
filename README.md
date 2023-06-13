@@ -31,7 +31,7 @@ By focusing on simplicity and empowering users, FastChat simplifies the creation
 
 ## Development View
 
-![diagram 1](./image/Diagram1.jpg)
+![diagram 1](./image/IMAGE.pdf.pdf)
 
 
 ## Applied Perspective
