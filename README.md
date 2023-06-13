@@ -40,21 +40,19 @@ The perspective I am considering in this report is scalability. Scalability refe
 
 FastChat is an open platform for training, serving, and evaluating large language models. It includes state-of-the-art models, a distributed multi-model serving system, and OpenAI-compatible RESTful APIs. From a scalability perspective, the following concerns are relevant:
 
-Load Handling: As an open platform, FastChat is likely to face varying loads. The ability to handle the increased load without degradation in performance is crucial.
-Resource Management: FastChat includes a distributed multi-model serving system. Efficient management of resources in this distributed system is important for scalability
-Performance: FastChat provides OpenAI-compatible RESTful APIs. Maintaining the performance of these APIs under increased load is important for user satisfaction and system usability.
+- Load Handling: As an open platform, FastChat is likely to face varying loads. The ability to handle the increased load without degradation in performance is crucial.
+- Resource Management: FastChat includes a distributed multi-model serving system. Efficient management of resources in this distributed system is important for scalability
+- Performance: FastChat provides OpenAI-compatible RESTful APIs. Maintaining the performance of these APIs under increased load is important for user satisfaction and system usability.
 
 To apply the scalability perspective, the following activities are performed:
 
-Analyzing Load Handling: Analyzing how FastChat handles increased load involves understanding the architecture of the system, specifically how it distributes load across different components. This can be done by reviewing the system's design documents and conducting stress tests to see how the system performs under heavy load.
-
-Assessing Resource Management: This involves understanding how FastChat manages resources in its distributed multi-model serving system. It includes understanding how resources are allocated and deallocated, how the system scales up and down based on load, and how efficiently it uses resources.
+- Analyzing Load Handling: Analyzing how FastChat handles increased load involves understanding the architecture of the system, specifically how it distributes load across different components. This can be done by reviewing the system's design documents and conducting stress tests to see how the system performs under heavy load.
+- Assessing Resource Management: This involves understanding how FastChat manages resources in its distributed multi-model serving system. It includes understanding how resources are allocated and deallocated, how the system scales up and down based on load, and how efficiently it uses resources.
 
 While applying the scalability perspective, it's important to watch out for the following potential problems and pitfalls:
 
-Bottlenecks: These are parts of the system that can limit overall capacity. They can occur at any point in the system where the capacity is limited. Identifying and addressing bottlenecks is crucial for improving scalability.
-
-Overprovisioning: While it's important to have enough resources to handle peak load, overprovisioning can lead to unnecessary costs. It's important to find a balance between having enough resources to handle peak load and not having so many that resources are wasted.
+- Bottlenecks: These are parts of the system that can limit overall capacity. They can occur at any point in the system where the capacity is limited. Identifying and addressing bottlenecks is crucial for improving scalability.
+- Overprovisioning: While it's important to have enough resources to handle peak load, overprovisioning can lead to unnecessary costs. It's important to find a balance between having enough resources to handle peak load and not having so many that resources are wasted.
 
 In conclusion, considering the scalability perspective is crucial for ensuring that FastChat can handle increased load and continue to provide a high level of performance. This involves careful analysis and planning, as well as ongoing monitoring and adjustment as the system's load changes.
 
