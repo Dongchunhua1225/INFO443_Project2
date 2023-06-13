@@ -31,6 +31,7 @@ By focusing on simplicity and empowering users, FastChat simplifies the creation
 
 ## Development View
 
+### **Figure 1: Architectural Element Diagram**
 ![diagram 1](./image/Diagram_2.jpg)
 
 
@@ -117,16 +118,20 @@ Refactoring Steps:
 
 1. In the file `fastchat/serve/model_worker.py`, the class ModelWorker is built. The class ModelWorker requires an Extract Function fix in the ` __init__ `. The fix is located at the end of the ` __init__ ` where there is a comment that says "generate stream" followed by a dozen lines of code. By following Martin's rules, we can extract these lines of code and create a separate function to do so.
 
+### **Figure 1: Generate Stream Improvement**
 ![generate_stream](./image/generate_stream.png)
 
 1. In the file `fastchat/train/train_flant5.py`, the class SupervisedDataset is generated. The class SupervisedDataset requires multiple Extract Function fixes in the ` __init__ ` of this class. To fix this, I found comments that were describing different sections of code, and I took those lines of code and followed Martin's rule of extraction and named the new function based on the comment describing the section of code. In total, I did two code fixes here for `shuffle_data` and `remove_short_qa`
 
+### **Figure 2.1: Shuffle Data Improvement**
 ![shuffle_data](./image/shuffle_data.png)
 
+### **Figure 2.2: Remove Short QA Improvement**
 ![remove_short_qa](./image/remove_short_qa.png)
 
 1. In the file `fastchat/utils.py` there are many Extract Function fixes that need to be made. In the `build_logger` function, there are three sections of code that are marked by comments. Each section does its own function, so let's move all of them into separate functions like so. Now there are three different functions with detailed names to describe what they are doing [instead of sectioning with comments].
 
+### **Figure 3: Build Logger Improvement**
 ![build_logger](./image/build_logger.png)
 
 Notable Bug Change + Feature Improvement + Tests
